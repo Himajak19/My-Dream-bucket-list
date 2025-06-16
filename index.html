@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dream Bucket List</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: url('to do list.webp') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem;
+    }
+
+    .bucket-container {
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 2rem;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #444;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #ffccd5;
+      margin: 10px 0;
+      padding: 15px 20px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      transition: 0.3s ease;
+    }
+
+    li input[type="checkbox"] {
+      margin-right: 15px;
+      transform: scale(1.5);
+      cursor: pointer;
+    }
+
+    li.completed {
+      background-color: #c9f9d6;
+      color: #666;
+      text-decoration: line-through;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      li {
+        padding: 12px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bucket-container">
+    <h1>My Dream Bucket List</h1>
+    <ul id="bucketList">
+      <li><input type="checkbox" onchange="markDone(this)"> Visit the Northern Lights</li>
+      <li><input type="checkbox" onchange="markDone(this)"> Skydive over Dubai</li>
+      <li><input type="checkbox" onchange="markDone(this)"> Explore the Great Wall of China</li>
+      <li><input type="checkbox" onchange="markDone(this)"> Learn to speak French fluently</li>
+      <li><input type="checkbox" onchange="markDone(this)"> Go on a safari in Africa</li>
+      <li><input type="checkbox" onchange="markDone(this)"> Scuba dive in the Great Barrier Reef</li>
+      <li><input type="checkbox" onchange="markDone(this)"> Publish my own book</li>
+      <li><input type="checkbox" onchange="markDone(this)"> See cherry blossoms in Japan</li>
+      <li><input type="checkbox" onchange="markDone(this)"> Volunteer for a meaningful cause</li>
+      <li><input type="checkbox" onchange="markDone(this)"> Experience zero gravity</li>
+    </ul>
+  </div>
+
+  <script>
+    function markDone(checkbox) {
+      const item = checkbox.parentElement;
+      item.classList.toggle('completed');
+    }
+  </script>
+
+</body>
+</html>
